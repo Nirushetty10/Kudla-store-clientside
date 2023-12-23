@@ -1,0 +1,72 @@
+@import "../Assets/global.module.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+.dashboard_layout {
+    @include custom_size(100%, 100vh, null);
+    @include display(row, null, null);
+    font-family: "Roboto";
+    
+    .left_sec {
+        @include custom_size(15%, 100vh, null);
+        background-color: #fafafa;
+
+        .logo_box {
+            @include custom_size(100%, 5rem, null);
+            @include display(row, null, center);
+            border-bottom: 1px solid rgb(187, 185, 185);
+
+            h2 {
+                margin: 0 0 0 25px;
+                font-size: 1.5rem;
+                color: $nav_color;
+            }
+        }
+        .content_box {
+            @include display(column, null, center);
+            gap: 2rem;
+            padding: 15px;
+
+        .dashboard_content {
+            @include custom_size(100%, 2.5rem, null);
+            @include display(row, null, center);
+            border-radius: 12px;
+            cursor: pointer;
+
+            .icons {
+                margin: 0 10px;
+                color: #777575;
+            }
+            h3 {
+                font-size: 15px;
+                margin: 0;
+            }
+            &:hover {
+                background-color: #e8effd;
+
+                h3 {
+                    color: $nav_color;
+                    margin: 0;
+                }
+                .icons {
+                    color: $nav_color;
+                }
+            }
+        }
+        .dashboard_active {
+            background-color: #e8effd;
+
+                h3 {
+                    color: $nav_color;
+                    margin: 0;
+                }
+                .icons {
+                    color: $nav_color;
+                }
+        }
+      }
+    }
+
+    .right_sec {
+        @include custom_size(85%, 100vh, null);
+    }
+}

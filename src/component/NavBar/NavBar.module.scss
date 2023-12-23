@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import '../../Assets//global.module.scss';
+.navBar {
+    @include custom_size(100%, 60px , null);
+    @include display(null,center,null);
+    background-color: $nav_color;
+    border-top: $border;
+    border-bottom: $border;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    font-family: "Roboto";
+    font-weight: 400;
+
+    .navContainer {
+        width: 100%;
+        max-width: $screen_width;
+        @include display(row,space-between,center);
+        // color: $primary_font_color;
+        color: $black;
+
+        .logo {
+            letter-spacing: 2px;
+            cursor: pointer;
+            font-size: 1rem;
+
+            h2 {
+                margin: 0;
+            }
+
+            &:hover {
+                color: $gold_color;
+            }
+        }
+        .search_container {
+            @include custom_size(50%, 1.8rem , null);
+            border: 1px solid #555;
+            border-radius: $border_radius;
+            @include display(row, center , center);
+            overflow: hidden;
+
+            input {
+                @include custom_size(90%, 100% , null);
+                padding: 0 15px;
+                border: none;
+                color: $nav_color;
+                outline: none;
+                cursor: pointer;
+            }
+            .search_button {
+                @include custom_size(10%, 100% , null);
+                border: none;
+                background-color: $primary_font_color;
+                color: $nav_color;
+                cursor: pointer;
+                @include display(row,center,center)
+            }
+        }
+        .nav_right {
+            @include custom_size(20%, 100% , null);
+            @include display(row, space-between, center);
+            cursor: pointer;
+
+        }
+
+    }
+    .searchResult_box {
+        position : absolute;
+        top: 60px;
+        left: 28%;
+        @include custom_size(40%, auto, null);
+        background-color: #e9e7e7;
+
+        .searchResult_item {
+            @include custom_size(90%, 1.5rem, null);
+            margin: 5px 0;
+
+            h1 {
+                margin-left: 1rem;
+                font-size: 1rem;
+                color: #4e4e4e;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import "../../Assets/global.module.scss";
+
+.category_container {
+    @include custom_size(100% , auto , null);
+    @include display(row,center,null);
+    margin: 50px 0;
+
+    .category_sec {
+        @include custom_size(100% , 100% , $screen_width);
+        @include display (column , center, null);
+
+        .category_title {
+            @include custom_size(100% , 25% , null);
+            @include display(row,null,center);
+            font-family: "Roboto";
+            font-size: 1.3rem;
+            color: $black;
+            cursor: pointer;
+            margin-bottom: 2rem;
+
+            h3 {
+                margin: 0;
+            }
+        }
+        .category_content {
+            @include custom_size(100% , 75% , null);
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-auto-rows: 300px;
+            gap: 10px;
+        }
+    }
+}

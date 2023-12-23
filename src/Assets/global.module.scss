@@ -1,0 +1,44 @@
+$border: 1px solid #ffffff;
+// $nav_color : #0350c5;
+$nav_color : #fffbf1;
+$primary_font_color: #fff;
+$gold_color : #F8DE22;
+$black : #161616;
+$border_radius : 8px;
+$screen_width :1280px;
+
+@mixin custom_size($width , $height , $max-width) {
+  width: $width;
+  height: $height;
+  max-width: $max-width;
+}
+
+@mixin display($flex-direction, $jc , $ai) {
+    display: flex;
+    flex-direction : $flex-direction;
+    align-items: $ai;
+    justify-content : $jc;
+  }
+
+@mixin fullpage () {
+  width: 100%;
+  min-height: 100vh;
+}
+
+@mixin white_button ($radius) {
+  background-color: #edaa38;
+  color : $black;
+  border: none;
+  border-radius: $radius;
+  @include display(row, center, center);
+  cursor: pointer;
+}
+
+@mixin blue_button ($radius) {
+  background-color: #edaa38;
+  color :  $black;
+  border: none;
+  border-radius: $radius;
+  @include display(row, center, center);
+  cursor: pointer;
+}

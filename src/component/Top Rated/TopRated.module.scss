@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import "../../Assets/global.module.scss";
+
+.container {
+    @include custom_size(100%, 25rem , null);
+    @include display(row,center,null);
+
+    .content {
+        @include custom_size(100%, 100% , $screen_width);
+        @include display(column, space-evenly , center);
+
+        .category_title {
+            @include custom_size(100%, 5rem , null);
+            @include display(row,space-between, center );
+            font-family: "Roboto";
+
+            h3 {
+                color:$black;
+                font-size: 1.5rem;
+            }
+
+            .view_all_button {
+                @include custom_size(8rem, 2rem , null);
+                @include blue_button(null);
+                font-size: 1rem;
+            }
+
+        }
+        .category_items {
+            @include custom_size(100%, 22rem , null);
+            @include display(row, space-between, center);
+            gap: 1.5rem;
+        }
+    }
+}

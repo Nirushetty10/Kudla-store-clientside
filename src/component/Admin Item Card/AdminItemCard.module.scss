@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import "../../Assets/global.module.scss";
+.item_box {
+    @include display(column, space-between, flex-start);
+    border: 1px solid rgb(177, 174, 174);
+    padding: 1rem;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-y: hidden;
+
+    .img_box {
+        @include custom_size(100%, 50% , null);
+        @include display(row, center, center);
+        img {
+            @include custom_size(50%, 90% , null);
+            object-fit: cover;
+        }
+    }
+    .title {
+        font-size: 0.8rem;
+    }
+    .product_priceandunit {
+
+        .product_price {
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+        .product_unit {
+            margin-left: 0.5rem;
+            font-size: 0.6rem;
+        }
+    }
+    .edit_delete {
+        @include custom_size(100%, 10% , null);
+        @include display(row, center, center);
+        .edit , .delete {
+            @include custom_size(50%, 100% , null);
+            @include display(row, center, center);
+            cursor: pointer;
+        }
+    }
+    
+}

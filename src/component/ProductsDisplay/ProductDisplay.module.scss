@@ -1,0 +1,25 @@
+@import '../../Assets/global.module.scss';
+
+.main_content {
+    @include custom_size(100%, null , $screen_width);
+    @include display(row , space-between, null);
+    gap: 1.5rem;
+
+    .filterSec {
+        flex: 1;
+        height: 85vh;
+        background-color: $nav_color;
+        color: $black;
+        position: sticky;
+        top: 60px;
+    }
+    .productsSec {
+        flex: 4;
+        padding: 2rem 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 18rem;
+        gap: 2rem 5rem;
+    }
+    
+}

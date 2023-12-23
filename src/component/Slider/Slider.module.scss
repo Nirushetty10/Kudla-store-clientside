@@ -1,0 +1,44 @@
+@import "../../Assets/global.module.scss";
+
+.sliderContainer {
+    @include custom_size(100%, 60vh , $screen_width);
+    @include display(column, null,null);
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .sliderImageContainer {
+        @include custom_size(100%, 100% , null);
+        display: flex;
+        .slide {
+            position: relative;
+            @include custom_size(100%, 100% , null);
+            min-width: 100%;
+            img {
+                @include custom_size(100%, 100% , null);
+                object-fit: cover;
+            }
+        }
+    }
+    .slider_bar {
+        @include custom_size(6rem, 1rem, null);
+        position: absolute;
+        bottom: 0.5rem;
+        left: 5%;
+        margin: 0 auto;
+        @include display(row, space-between , center);
+
+        .bar {
+            width: 0.5rem;
+            height: 0.6rem;
+            border-radius: 10px;
+            background-color: #ffffff;
+            overflow: hidden;
+
+            .progress_fill {
+                @include custom_size(100%,100%, null);
+               background-color: $nav_color;
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import "../../Assets/global.module.scss";
+
+.card {
+    flex: 1;
+    background-color: $primary_font_color;
+    height: 22rem;
+    padding: 0.5rem;
+    font-family: "Roboto";
+    position: relative;
+    border:1px solid rgb(148, 148, 148);
+    border-radius: 8px;
+
+    .rating {
+        @include custom_size(1.8rem, 1rem, null);
+        @include display(row, space-around, center);
+        background-color: #388e3c;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 0.7rem;
+        color: $black;
+    }
+
+    .image_sec {
+        @include custom_size(100%, 50%, null);
+        @include display(row, center, center);
+
+        img {
+           @include custom_size(60%,80%,null);
+           object-fit: cover
+        }
+    }
+    .content_sec {
+        @include custom_size(100%, 35%, null);
+        .qnty , .price {
+            @include display(row,null,center);
+        }
+
+        .desc {
+            @include custom_size(100%, 46%, null);
+            overflow: hidden;
+            cursor: pointer;
+
+            &:hover {
+                color: $black;
+            }
+        }
+        .qnty {
+            @include custom_size(100%, 30%, null);
+            color: #616161
+        }
+        .price {
+            @include custom_size(100%, 30%, null);
+            font-weight: 500;
+        }
+    }
+    button {
+        @include custom_size(100%, 15%, null);
+        @include white_button(null);
+        border: 1px solid #b1b0b0;
+    }
+}

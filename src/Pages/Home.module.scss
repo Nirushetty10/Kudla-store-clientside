@@ -1,0 +1,5 @@
+@import "../Assets/global.module.scss";
+.home_container {
+  @include fullpage();
+  @include display(column, null, center);
+}

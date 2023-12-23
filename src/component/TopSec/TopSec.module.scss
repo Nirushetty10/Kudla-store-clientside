@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import "../../Assets/global.module.scss";
+
+.container {
+    @include custom_size(100%, 35px , null);
+    background-color: #c1cfac;
+    @include display(row,center,null);
+
+    .nav_top {
+        @include custom_size(100%, 100% , $screen_width);
+        @include display(row, space-between, center);
+        color:  $primary_font_color;
+        font-family: "roboto";
+        font-weight: 100;
+        // font-size: 0.8rem;
+
+        .left_sec {
+            @include custom_size(15%, 100% , null);
+            @include display(row , space-between,center);
+            cursor: pointer;
+
+            .icons {
+                font-size: 1.5rem;
+            }
+            .partition_bar {
+                margin: 0 10px;
+            }
+            .mobile_num {
+                margin: 0;
+                font-size: 1.2rem;
+            }
+
+            .mobile_num:hover , .icons:hover {
+               color: $gold_color;
+            }
+        }
+        .right_sec {
+            @include custom_size(10%, 100% , null);
+            @include display(row , space-between,center);
+            cursor: pointer;
+
+            h3 {
+                font-size: 1.2rem;
+                margin: 0;
+            }
+
+            h3:hover {
+                color: $gold_color;
+            }
+        }
+        .middle_sec {
+            @include custom_size(65%, 100%, null);
+            @include display(row,center,center);
+            will-change: transform;
+            overflow: hidden;
+            white-space: nowrap;
+
+            .message_sec {
+                animation: scrollText 40s linear infinite;
+                will-change: transform;
+                margin: 0;
+                font-size: 1.2rem;
+            }
+            @keyframes scrollText {
+                0% {
+                    transform: translate(90%);
+                }
+                100% {
+                    transform: translate(-100%);
+                }
+            }
+        }
+    }
+}
+
+.partition_bar {
+    @include custom_size(0.5px, 55% , null);
+    border: $border;
+}

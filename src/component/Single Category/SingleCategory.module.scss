@@ -1,0 +1,60 @@
+@import "../../Assets/global.module.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+.Category_card {
+    @include custom_size(100% , 100% , null);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    .image_sec {
+        @include custom_size(100%, 100%, null);
+        @include display (row , center , center);
+        transition: transform 1s ease;
+
+        img {
+            @include custom_size(100%, 100%, null);
+            object-fit: cover;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    .titel_sec {
+        position: absolute;
+        bottom: 10px;
+        @include custom_size(100%, 2rem, null);
+
+        h3 {
+            font-family: "Roboto";
+            font-size: 1.5rem;
+            margin: 0;
+            color: #fff;
+            text-align: center;
+
+            &:hover {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+.class0 {
+    grid-column: 1 / span 2;
+}
+.class1 {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 2;
+}
+.class4 {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 2;
+}
+.class5 {
+    grid-column: 3 / span 2;
+}
+// .class6 {
+//     grid-column: 1 / span 2;
+// }
+// .class7 {
+//     grid-column: 3 / span 2;
+// }

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import "../../Assets/global.module.scss";
+
+.product_layout {
+    @include custom_size(100%, 100% , null);
+    padding: 0 1.5rem;
+    background-color: #f7f7f7;
+    
+    .top_heading {
+        @include custom_size(100%, 10% , null);
+        @include display(row, space-between, center);
+
+        button {
+            @include custom_size(12rem, 2rem , null);
+            @include blue_button (10px);
+        }
+    }
+    .product_layout {
+        @include custom_size(100%, 85% , null);
+        background-color: $primary_font_color;
+        padding: 0.8rem;
+
+        .product_layout_topSec {
+            @include custom_size(100%, 5% , null);
+            @include display(row, space-between, center);
+
+            input {
+                @include custom_size(15rem, 2rem , null);
+                border: 1px solid rgb(153, 151, 151);
+                outline: none;
+                padding: 0 1rem;
+            }
+            select {
+                @include custom_size(15rem, 2rem , null);
+                border: 1px solid rgb(153, 151, 151);
+                padding: 0 1rem;
+                outline: none;
+            }
+        }
+        .product_layout_listSec {
+            @include custom_size(100%, 95% , null);
+            padding: 0.8rem 0;
+        }
+    }
+    
+}

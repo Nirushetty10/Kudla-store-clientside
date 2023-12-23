@@ -1,0 +1,18 @@
+@import '../Assets/global.module.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    @include display(column , null, center);
+
+    h3 {
+        width: 100%;
+        max-width: $screen_width;
+        font-family: "Roboto";
+        font-size: 1.3rem;
+        color: $nav_color;
+        margin: 1rem 0;
+    }
+
+}
