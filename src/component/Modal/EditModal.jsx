@@ -3,6 +3,7 @@ import ReactDOM  from 'react-dom';
 import classes from "./EditModal.module.scss";
 import  DeleteIcon  from '@mui/icons-material/Delete';
 import  axios  from 'axios';
+import config from "../../config.json"
 
 const BackDrop = () => {
   return <div className={classes.backdrop}></div>
@@ -111,14 +112,14 @@ const ModalOverlay = (props) => {
   
     try {
       if(props.type === "createProduct") {
-        const res = await axios.post(`http://localhost:4000/api/product`,formData,{
+        const res = await axios.post(`${config.url}/api/product`,formData,{
           headers: {
             'Content-Type': 'multipart/form-data',
           }})
         if (res.status === 200) {
           props.onCloseModal();
       } else {
-      const res = await axios.put(`http://localhost:4000/api/product/${props.data._id}`,formData,{
+      const res = await axios.put(`${config.url}/${props.data._id}`,formData,{
         headers: {
           'Content-Type': 'multipart/form-data',
         }})
@@ -197,7 +198,7 @@ const ModalOverlay = (props) => {
             {[...Array(4)].map((_,index) => {
               const img = images[index];
               return <div className={classes.img_box}>
-                 <img src={`http://localhost:4000/${img}`}/>
+                 <img src={`${config.url}/${img}`}/>
                 <input type="file" name="" id="" onChange={(e) =>handleImageChange(e,index)}/>
               </div>
             })}

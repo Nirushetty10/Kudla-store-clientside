@@ -7,6 +7,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import { Badge } from "@mui/material";
 import  axios  from 'axios';
 import { useNavigate } from 'react-router-dom';
+import config from "../../config.json"
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const NavBar = () => {
 
   const fetchData = async ()=> {
     try {
-      let data = await axios.post(`http://localhost:4000/api/product/searchApi?letter=${searchQuery}`);
+      let data = await axios.post(`${config.url}/api/product/searchApi?letter=${searchQuery}`);
       setSearchResult(data.data);
     } catch (error) {
        setSearchResult([{"title":"No result found"}])

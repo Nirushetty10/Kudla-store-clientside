@@ -3,6 +3,7 @@ import classes from "./AdminItemCard.module.scss";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditModal from '../Modal/EditModal';
+import config from "../../config.json"
 
 const AdminItemCard = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,7 +18,7 @@ const AdminItemCard = (props) => {
     {isModalOpen && <EditModal onCloseModal={onModalCancel} data={props.data}/>}
     <div className={classes.item_box}>
       <div className={classes.img_box}>
-      <img src={`http://localhost:4000/${props.data.image[0]}`} alt="" />
+      <img src={`${config.url}/${props.data.image[0]}`} alt="" />
       </div>
         <h2 className={classes.title}>{props.data.title.slice(0,60)}</h2>
         <div className={classes.product_priceandunit}>

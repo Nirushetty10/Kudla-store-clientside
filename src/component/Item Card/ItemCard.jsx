@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import classes from "./ItemCard.module.scss";
+import config from "../../config.json"
 
 const ItemCard = (props) => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const ItemCard = (props) => {
     <div className={classes.card} >
       <div className={classes.rating}>{props.item.rating} *</div>
        <div className={classes.image_sec} onClick={navigateToSingleProductHandler}>
-        <img src={`http://localhost:4000/${props.item.image[1]}`} alt="" />
+        <img src={`${config.url}/${props.item.image[1]}`} alt="" />
        </div>
        <div className={classes.content_sec}>
         <div className={classes.desc} onClick={navigateToSingleProductHandler}>{props.item.title}</div>

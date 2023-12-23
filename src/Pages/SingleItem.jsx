@@ -61,12 +61,12 @@ const SingleItem = () => {
        <div className={classes.product_sec}>
           <div className={classes.left_sec}>
             <div className={classes.top_img}>
-              <img src={`http://localhost:4000/${image[imageIndex]}`} alt="" />
+              <img src={`${config.url}/${image[imageIndex]}`} alt="" />
             </div>
             <div className={classes.img_list}>
                {image?.map((img,index) => {
                    return <div key={img} className={classes.image_list_card} style={{ border : (imageIndex === index) ? "1px solid #0350c5" : null}} onClick={() => setImageIndex(index)}>
-                     <img src={`http://localhost:4000/${img}`} alt="" />
+                     <img src={`${config.url}/${img}`} alt="" />
                    </div>
                })}
             </div>
