@@ -1,13 +1,15 @@
 import classes from "./TopSec.module.scss";
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { useNavigate } from "react-router-dom";
 
 const TopSec = () => {
+  const navigate = useNavigate();
   return (
     <div className={classes.container}>
        <div className={classes.nav_top}>
         <div className={classes.left_sec}>
-           <PhoneIphoneIcon className={classes.icons}/>
+           <PhoneIphoneIcon className={classes.icons} onClick={() => navigate("/admin/dashboard")}/>
            <div className={classes.partition_bar}></div>
            <WhatsAppIcon className={classes.icons}/>
            <div className={classes.partition_bar}></div>
