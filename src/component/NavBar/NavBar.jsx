@@ -11,6 +11,7 @@ import config from "../../config.json"
 
 const NavBar = () => {
   const navigate = useNavigate();
+  const [userinfo, setUserinfo] = useState("");
   const [typewriterIndex, setTypewriterIndex] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState([])
@@ -27,6 +28,8 @@ const NavBar = () => {
   }
 
   useEffect(() => {
+    let user = localStorage.getItem("userinfo");
+    setUserinfo(user || null)
     const interval = setInterval(() => {
       setTypewriterIndex((prevIndex) => (prevIndex + 1) % typewriterWords.length);
     }, 3000);
@@ -46,6 +49,18 @@ const NavBar = () => {
      navigate(`/single-product/${id}`);
      setSearchResult([]);
      setSearchQuery("");
+  }
+  const logoutHandler = async()=> {
+    try {
+      const response = await axios.get(`${config.url}/api/auth/logout`);
+      const userData = await response.data;
+      if(userData.success) {
+        localStorage.setItem("userinfo","")
+        navigate('/')
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -68,7 +83,7 @@ const NavBar = () => {
            <Badge badgeContent={1} color="primary">
            <NotificationsIcon />
            </Badge>
-           <LoginIcon />
+           {userinfo && <LoginIcon onClick={logoutHandler}/>}
         </div>
       </div>
       <div className={classes.searchResult_box}>

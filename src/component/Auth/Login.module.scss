@@ -1,0 +1,28 @@
+@import '../../Assets/global.module.scss';
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    @include display(column , null, center);
+
+    .loginBox {
+      @include custom_size(30rem,20rem,null);
+      @include display(column , null, center);
+      gap: 2rem;
+      margin-top: 5rem;
+      border: 1px solid black;
+
+      .loginInput {
+        @include custom_size(80%,2rem,null);
+        @include display(row , space-between, center);
+
+        input {
+            @include custom_size(60%,2rem,null);
+        }
+      }
+      .loginButton {
+        @include custom_size(50%,2rem,null);
+        @include blue_button(10px);
+      }
+    }
+}

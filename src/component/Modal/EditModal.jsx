@@ -109,7 +109,7 @@ const ModalOverlay = (props) => {
   for (let i = 0; i < selectedImage.length; i++) {
     formData.append(`image[${i}]`, selectedImage[i]);
   }
-  
+  debugger
     try {
       if(props.type === "createProduct") {
         const res = await axios.post(`${config.url}/api/product`,formData,{
@@ -118,16 +118,13 @@ const ModalOverlay = (props) => {
           }})
         if (res.status === 200) {
           props.onCloseModal();
-      } else {
-      const res = await axios.put(`${config.url}/${props.data._id}`,formData,{
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        }})
+      }
+     } else {
+      const res = await axios.put(`${config.url}/api/product/${props.data._id}`,formData,{withCredentials: true})
       if (res.status === 200) {
         props.onCloseModal();
       }
     }
-  }
     } catch (error) {
       console.log(error.message);
     }

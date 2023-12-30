@@ -1,79 +1,308 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import "../../Assets/global.module.scss";
 
-.container {
-    @include custom_size(100%, 35px , null);
-    background-color: #c1cfac;
-    @include display(row,center,null);
+// .container {
+//     @include custom_size(100%, 35px , null);
+//     background-color: #7a7a73;
+//     @include display(row,center,null);
 
-    .nav_top {
-        @include custom_size(100%, 100% , $screen_width);
-        @include display(row, space-between, center);
-        color:  $primary_font_color;
-        font-family: "roboto";
-        font-weight: 100;
-        // font-size: 0.8rem;
+//     .nav_top {
+//         @include custom_size(100%, 100% , $screen_width);
+//         @include display(row, space-between, center);
+//         color:  $primary_font_color;
+//         font-family: "roboto";
+//         font-weight: 100;
 
-        .left_sec {
-            @include custom_size(15%, 100% , null);
-            @include display(row , space-between,center);
-            cursor: pointer;
+//         .left_sec {
+//             @include custom_size(15%, 100% , null);
+//             @include display(row , space-between,center);
+//             cursor: pointer;
 
-            .icons {
-                font-size: 1.5rem;
-            }
-            .partition_bar {
-                margin: 0 10px;
-            }
-            .mobile_num {
-                margin: 0;
-                font-size: 1.2rem;
-            }
+//             .icons {
+//                 font-size: 1.5rem;
+//             }
+//             .partition_bar {
+//                 margin: 0 10px;
+//             }
+//             .mobile_num {
+//                 margin: 0;
+//                 font-size: 1.2rem;
+//             }
 
-            .mobile_num:hover , .icons:hover {
-               color: $gold_color;
-            }
-        }
-        .right_sec {
-            @include custom_size(10%, 100% , null);
-            @include display(row , space-between,center);
-            cursor: pointer;
+//             .mobile_num:hover , .icons:hover {
+//                color: $gold_color;
+//             }
+//         }
+//         .right_sec {
+//             @include custom_size(10%, 100% , null);
+//             @include display(row , space-between,center);
+//             cursor: pointer;
 
-            h3 {
-                font-size: 1.2rem;
-                margin: 0;
-            }
+//             h3 {
+//                 font-size: 1.2rem;
+//                 margin: 0;
+//             }
 
-            h3:hover {
-                color: $gold_color;
-            }
-        }
-        .middle_sec {
-            @include custom_size(65%, 100%, null);
-            @include display(row,center,center);
-            will-change: transform;
-            overflow: hidden;
-            white-space: nowrap;
+//             h3:hover {
+//                 color: $gold_color;
+//             }
+//         }
+//         .middle_sec {
+//             @include custom_size(65%, 100%, null);
+//             @include display(row,center,center);
+//             will-change: transform;
+//             overflow: hidden;
+//             white-space: nowrap;
 
-            .message_sec {
-                animation: scrollText 40s linear infinite;
-                will-change: transform;
-                margin: 0;
-                font-size: 1.2rem;
-            }
-            @keyframes scrollText {
-                0% {
-                    transform: translate(90%);
-                }
-                100% {
-                    transform: translate(-100%);
-                }
-            }
-        }
-    }
-}
+//             .message_sec {
+//                 animation: scrollText 40s linear infinite;
+//                 will-change: transform;
+//                 margin: 0;
+//                 font-size: 1.2rem;
+//             }
+//             @keyframes scrollText {
+//                 0% {
+//                     transform: translate(90%);
+//                 }
+//                 100% {
+//                     transform: translate(-100%);
+//                 }
+//             }
+//         }
+//     }
+// }
 
 .partition_bar {
     @include custom_size(0.5px, 55% , null);
     border: $border;
 }
+
+  @media screen and (max-width: 320px) {
+    .container {
+        @include custom_size(100%, 35px , 100%);
+        background-color: #7a7a73;
+        @include display(row,center,null);
+        padding: 0 10px;
+    
+        .nav_top {
+            @include custom_size(100%, 100% , 100%);
+            @include display(row, space-between, center);
+            color:  $primary_font_color;
+            font-family: "roboto";
+            font-weight: 100;
+    
+            .left_sec {
+                @include custom_size(40%, 100% , null);
+                @include display(row , space-between,center);
+                cursor: pointer;
+    
+                .icons {
+                    font-size: $fz-sm;
+                }
+                .partition_bar {
+                    margin: 0 5px;
+                }
+                .mobile_num {
+                    margin: 0;
+                    font-size: $fz-sm;
+                }
+    
+                .mobile_num:hover , .icons:hover {
+                   color: $gold_color;
+                }
+            }
+            .right_sec {
+                @include custom_size(50%, 100% , null);
+                @include display(row , space-between,center);
+                cursor: pointer;
+    
+                h3 {
+                    font-size: $fz-sm1;
+                    margin: 0;
+                }
+    
+                h3:hover {
+                    color: $gold_color;
+                }
+            }
+            .middle_sec {
+                @include custom_size(40%, 100%, null);
+                @include display(row,center,center);
+                will-change: transform;
+                overflow: hidden;
+                white-space: nowrap;
+    
+                .message_sec {
+                    animation: scrollText 40s linear infinite;
+                    will-change: transform;
+                    margin: 0;
+                    font-size: $fz-sm;
+                }
+                @keyframes scrollText {
+                    0% {
+                        transform: translate(90%);
+                    }
+                    100% {
+                        transform: translate(-100%);
+                    }
+                }
+            }
+        }
+    }
+  }
+  
+  @media screen and (min-width: 321px) and (max-width: 480px) {
+    .container {
+        @include custom_size(100%, 35px , 100%);
+        background-color: #7a7a73;
+        @include display(row,center,null);
+        padding: 0 10px;
+    
+        .nav_top {
+            @include custom_size(100%, 100% , 100%);
+            @include display(row, space-between, center);
+            color:  $primary_font_color;
+            font-family: "roboto";
+            font-weight: 100;
+    
+            .left_sec {
+                @include custom_size(40%, 100% , null);
+                @include display(row , space-between,center);
+                cursor: pointer;
+    
+                .icons {
+                    font-size: $fz-sm;
+                }
+                .partition_bar {
+                    margin: 0 5px;
+                }
+                .mobile_num {
+                    margin: 0;
+                    font-size: $fz-sm;
+                }
+    
+                .mobile_num:hover , .icons:hover {
+                   color: $gold_color;
+                }
+            }
+            .right_sec {
+                @include custom_size(25%, 100% , null);
+                @include display(row , space-between,center);
+                cursor: pointer;
+    
+                h3 {
+                    font-size: $fz-sm1;
+                    margin: 0;
+                }
+    
+                h3:hover {
+                    color: $gold_color;
+                }
+            }
+            .middle_sec {
+                @include custom_size(40%, 100%, null);
+                @include display(row,center,center);
+                will-change: transform;
+                overflow: hidden;
+                white-space: nowrap;
+    
+                .message_sec {
+                    animation: scrollText 40s linear infinite;
+                    will-change: transform;
+                    margin: 0;
+                    font-size: $fz-sm;
+                }
+                @keyframes scrollText {
+                    0% {
+                        transform: translate(90%);
+                    }
+                    100% {
+                        transform: translate(-100%);
+                    }
+                }
+            }
+        }
+    }
+  }
+  
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .container {
+        @include custom_size(100%, 35px , 100%);
+        background-color: #7a7a73;
+        @include display(row,center,null);
+        padding: 0 10px;
+    
+        .nav_top {
+            @include custom_size(100%, 100% , 100%);
+            @include display(row, space-between, center);
+            color:  $primary_font_color;
+            font-family: "roboto";
+            font-weight: 100;
+    
+            .left_sec {
+                @include custom_size(40%, 100% , null);
+                @include display(row , space-between,center);
+                cursor: pointer;
+    
+                .icons {
+                    font-size: $fz-m;
+                }
+                .partition_bar {
+                    margin: 0 5px;
+                }
+                .mobile_num {
+                    margin: 0;
+                    font-size: $fz-m;
+                }
+    
+                .mobile_num:hover , .icons:hover {
+                   color: $gold_color;
+                }
+            }
+            .right_sec {
+                @include custom_size(30%, 100% , null);
+                @include display(row , space-between,center);
+                cursor: pointer;
+    
+                h3 {
+                    font-size: $fz-m;
+                    margin: 0;
+                }
+    
+                h3:hover {
+                    color: $gold_color;
+                }
+            }
+            .middle_sec {
+                @include custom_size(40%, 100%, null);
+                @include display(row,center,center);
+                will-change: transform;
+                overflow: hidden;
+                white-space: nowrap;
+    
+                .message_sec {
+                    animation: scrollText 40s linear infinite;
+                    will-change: transform;
+                    margin: 0;
+                    font-size: $fz-sm;
+                }
+                @keyframes scrollText {
+                    0% {
+                        transform: translate(90%);
+                    }
+                    100% {
+                        transform: translate(-100%);
+                    }
+                }
+            }
+        }
+    }
+  }
+  
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    
+  }
+  @media screen and (min-width: 1025px) {
+    
+  }
+  

@@ -6,6 +6,10 @@ $gold_color : #F8DE22;
 $black : #161616;
 $border_radius : 8px;
 $screen_width :1280px;
+$button_color_active : #FFCF96;
+$fz-sm : 0.7rem;
+$fz-sm1 : 0.6rem;
+$fz-m : 1.2rem;
 
 @mixin custom_size($width , $height , $max-width) {
   width: $width;

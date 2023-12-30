@@ -96,13 +96,13 @@
             cursor: pointer;
 
             &:hover {
-              color: $primary_font_color;
+              color: #000;
               background-color: $nav_color;
             }
           }
           .active {
-            color: $primary_font_color;
-            background-color: $nav_color;
+            color: #000;
+            background-color: $button_color_active;
           }
         }
       }

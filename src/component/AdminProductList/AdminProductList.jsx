@@ -46,8 +46,9 @@ const AdminProductList = (props) => {
     }
 
     const onDeleteHandler = async() => {
+        debugger
         try {
-            await axios.delete(`${config.url}/${id}`);
+            await axios.delete(`${config.url}/api/product/${id}`);
             setToggleModal(false)
             refetch(`${config.url}/api/product`);
         } catch (error) {

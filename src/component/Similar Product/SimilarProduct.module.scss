@@ -1,0 +1,5 @@
+@import '../../Assets/global.module.scss';
+
+.similarContainer {
+    @include custom_size(100%, 25rem , $screen_width);
+}

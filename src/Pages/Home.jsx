@@ -11,7 +11,7 @@ import Footer from "../component/Footer/Footer";
 const Home = () => {
   return (
     <div className={classes.home_container}>
-      <TopSec />
+        <TopSec />
         <NavBar />
         <Slider />
         <Category />

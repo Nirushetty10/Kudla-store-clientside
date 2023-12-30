@@ -15,7 +15,7 @@ const AdminItemCard = (props) => {
   
   return (
     <>
-    {isModalOpen && <EditModal onCloseModal={onModalCancel} data={props.data}/>}
+    {isModalOpen && <EditModal onCloseModal={onModalCancel} data={props.data} type="editProduct"/>}
     <div className={classes.item_box}>
       <div className={classes.img_box}>
       <img src={`${config.url}/${props.data.image[0]}`} alt="" />

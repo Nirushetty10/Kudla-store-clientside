@@ -7,6 +7,7 @@ import BestSeller from './Pages/BestSeller'
 import SingleItem from './Pages/SingleItem'
 import Category from './Pages/Category'
 import Dashboard from './Pages/Dashboard.jsx'
+import Login from './component/Auth/Login.jsx'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <Route path='/single-product/:id' element={<SingleItem />}/>
       <Route path='/category/:title' element={<Category />}/>
       <Route path='/admin/dashboard' element={<Dashboard />}/>
+      <Route path='/login' element={<Login />}/>
       </Routes>
       </BrowserRouter>
   )
