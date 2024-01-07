@@ -300,9 +300,149 @@
   }
   
   @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        @include custom_size(100%, 35px , 100%);
+        background-color: #7a7a73;
+        @include display(row,center,null);
+        padding: 0 10px;
     
+        .nav_top {
+            @include custom_size(100%, 100% , $screen_width);
+            @include display(row, space-between, center);
+            color:  $primary_font_color;
+            font-family: "roboto";
+            font-weight: 100;
+    
+            .left_sec {
+                @include custom_size(30%, 100% , null);
+                @include display(row , space-between,center);
+                cursor: pointer;
+    
+                .icons {
+                    font-size: $fz-m;
+                }
+                .partition_bar {
+                    margin: 0 5px;
+                }
+                .mobile_num {
+                    margin: 0;
+                    font-size: $fz-m;
+                }
+    
+                .mobile_num:hover , .icons:hover {
+                   color: $gold_color;
+                }
+            }
+            .right_sec {
+                @include custom_size(30%, 100% , null);
+                @include display(row , space-between,center);
+                cursor: pointer;
+    
+                h3 {
+                    font-size: $fz-m;
+                    margin: 0;
+                }
+    
+                h3:hover {
+                    color: $gold_color;
+                }
+            }
+            .middle_sec {
+                @include custom_size(40%, 100%, null);
+                @include display(row,center,center);
+                will-change: transform;
+                overflow: hidden;
+                white-space: nowrap;
+    
+                .message_sec {
+                    animation: scrollText 40s linear infinite;
+                    will-change: transform;
+                    margin: 0;
+                    font-size: $fz-sm;
+                }
+                @keyframes scrollText {
+                    0% {
+                        transform: translate(90%);
+                    }
+                    100% {
+                        transform: translate(-100%);
+                    }
+                }
+            }
+        }
+    }
   }
   @media screen and (min-width: 1025px) {
+    .container {
+        @include custom_size(100%, 35px , 100%);
+        background-color: #7a7a73;
+        @include display(row,center,null);
+        padding: 0 10px;
     
+        .nav_top {
+            @include custom_size(100%, 100% , $screen_width);
+            @include display(row, space-between, center);
+            color:  $primary_font_color;
+            font-family: "roboto";
+            font-weight: 100;
+    
+            .left_sec {
+                @include custom_size(20%, 100% , null);
+                @include display(row , space-between,center);
+                cursor: pointer;
+    
+                .icons {
+                    font-size: $fz-m;
+                }
+                .partition_bar {
+                    margin: 0 5px;
+                }
+                .mobile_num {
+                    margin: 0;
+                    font-size: $fz-m;
+                }
+    
+                .mobile_num:hover , .icons:hover {
+                   color: $gold_color;
+                }
+            }
+            .right_sec {
+                @include custom_size(20%, 100% , null);
+                @include display(row , space-between,center);
+                cursor: pointer;
+    
+                h3 {
+                    font-size: $fz-m;
+                    margin: 0;
+                }
+    
+                h3:hover {
+                    color: $gold_color;
+                }
+            }
+            .middle_sec {
+                @include custom_size(40%, 100%, null);
+                @include display(row,center,center);
+                will-change: transform;
+                overflow: hidden;
+                white-space: nowrap;
+    
+                .message_sec {
+                    animation: scrollText 40s linear infinite;
+                    will-change: transform;
+                    margin: 0;
+                    font-size: $fz-sm;
+                }
+                @keyframes scrollText {
+                    0% {
+                        transform: translate(90%);
+                    }
+                    100% {
+                        transform: translate(-100%);
+                    }
+                }
+            }
+        }
+    }
   }
   
